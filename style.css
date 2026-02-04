@@ -1,0 +1,178 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #fafde5;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center Container */
+.container {
+  position: relative;
+}
+
+/* Envelope */
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Envelope Body */
+.envelope-body {
+  background-color: #790000;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Envelope Flap */
+.envelope-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #790000;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  transform-origin: top;
+  transition: transform 0.8s ease;
+  z-index: 3;
+}
+
+/* Click Text */
+.click-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 15px;
+  color: #fafde5;
+  font-size: 16px;
+  z-index: 4;
+}
+
+/* Card */
+.card {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: #fafde5;
+  width: 240px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 2;
+}
+
+.card h1 {
+  color: #790000;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#yesBtn {
+  background-color: #790000;
+  color: #fafde5;
+}
+
+#noBtn {
+  background-color: #f0caca;
+  color: #790000;
+  position: relative;
+}
+
+/* Open Envelope State */
+.envelope.open .envelope-top {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .card {
+  transform: translateX(-50%) translateY(-20px);
+  opacity: 1;
+}
+
+/* Success Message */
+.success {
+  position: absolute;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+
+.success h2 {
+  color: #790000;
+  margin-bottom: 10px;
+}
+
+.success p {
+  color: #790000;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Floating Hearts */
+.heart {
+  position: absolute;
+  color: #790000;
+  font-size: 20px;
+  animation: floatUp 4s linear infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .envelope {
+    width: 240px;
+    height: 160px;
+  }
+}
