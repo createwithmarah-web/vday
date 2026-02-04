@@ -3,40 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Be My Valentine 💖</title>
+  <title>Valentine Invitation</title>
+
+  <!-- Script Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Floating hearts container -->
+  <!-- Floating hearts -->
   <div id="hearts-container"></div>
 
-  <!-- Envelope Section -->
   <div class="container">
     <div class="envelope" id="envelope">
-      <div class="envelope-top"></div>
-      <div class="envelope-body"></div>
-      <div class="click-text">Click here 💌</div>
 
-      <!-- Valentine Card -->
-      <div class="card" id="card">
+      <!-- Envelope flap -->
+      <div class="envelope-top"></div>
+
+      <!-- Envelope body -->
+      <div class="envelope-body"></div>
+
+      <div class="click-text">Click here</div>
+
+      <!-- Card -->
+      <div class="card">
         <h1>Will you be my Valentine?</h1>
+
         <div class="buttons">
-          <button id="yesBtn">YES 💖</button>
-          <button id="noBtn">NO 😅</button>
+          <button id="yesBtn">YES</button>
+          <button id="noBtn">NO</button>
         </div>
+
+        <!-- Stickers -->
+        <img src="https://i.imgur.com/WyQ8KpK.png" class="sticker cat-left" />
+        <img src="https://i.imgur.com/3Xjz3Qp.png" class="sticker cat-right" />
       </div>
     </div>
   </div>
 
   <!-- Success Message -->
   <div class="success hidden" id="successMessage">
-    <h2>Yay! 💕</h2>
+    <h2>Yay!</h2>
     <p>
-      I can’t wait to spend February 14 with you.
-      <br />
-      You make my heart so happy 💖
+      I can’t wait to spend February 14 with you.<br>
+      You make my heart so happy.
     </p>
+
+    <img src="https://i.imgur.com/WyQ8KpK.png" class="sticker cat-center" />
   </div>
 
   <script src="script.js"></script>

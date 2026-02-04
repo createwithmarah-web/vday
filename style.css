@@ -1,9 +1,7 @@
-/* Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -13,74 +11,78 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Arial, sans-serif;
 }
 
-/* Center Container */
+/* Main Container */
 .container {
   position: relative;
 }
 
-/* Envelope */
+/* BIG Envelope */
 .envelope {
   position: relative;
-  width: 280px;
-  height: 180px;
+  width: 380px;
+  height: 260px;
   cursor: pointer;
   animation: float 3s ease-in-out infinite;
 }
 
-/* Envelope Body */
+/* Envelope body with outline */
 .envelope-body {
   background-color: #790000;
   width: 100%;
   height: 100%;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 20px 20px;
+  border: 4px solid #5a0000;
 }
 
-/* Envelope Flap */
+/* Envelope flap */
 .envelope-top {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: #790000;
-  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
   transform-origin: top;
   transition: transform 0.8s ease;
+  border: 4px solid #5a0000;
+  border-bottom: none;
   z-index: 3;
 }
 
-/* Click Text */
+/* Click text */
 .click-text {
   position: absolute;
+  bottom: 20px;
   width: 100%;
   text-align: center;
-  bottom: 15px;
   color: #fafde5;
-  font-size: 16px;
-  z-index: 4;
+  letter-spacing: 1px;
 }
 
 /* Card */
 .card {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 50%;
-  transform: translateX(-50%) translateY(100px);
+  transform: translateX(-50%) translateY(120px);
   background-color: #fafde5;
-  width: 240px;
-  padding: 20px;
-  border-radius: 12px;
+  width: 320px;
+  padding: 30px;
+  border-radius: 20px;
   text-align: center;
   opacity: 0;
   transition: all 0.8s ease;
+  border: 3px solid #790000;
   z-index: 2;
 }
 
 .card h1 {
   color: #790000;
-  font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 24px;
 }
 
 /* Buttons */
@@ -90,11 +92,11 @@ body {
 }
 
 button {
-  padding: 8px 14px;
-  border-radius: 20px;
+  padding: 10px 20px;
+  border-radius: 25px;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #yesBtn {
@@ -103,24 +105,44 @@ button {
 }
 
 #noBtn {
-  background-color: #f0caca;
+  background-color: #f1cfcf;
   color: #790000;
   position: relative;
 }
 
-/* Open Envelope State */
+/* Open state */
 .envelope.open .envelope-top {
   transform: rotateX(180deg);
 }
 
 .envelope.open .card {
-  transform: translateX(-50%) translateY(-20px);
+  transform: translateX(-50%) translateY(-30px);
   opacity: 1;
 }
 
-/* Success Message */
-.success {
+/* Stickers */
+.sticker {
   position: absolute;
+  width: 70px;
+}
+
+.cat-left {
+  bottom: -20px;
+  left: -25px;
+}
+
+.cat-right {
+  top: -30px;
+  right: -25px;
+}
+
+.cat-center {
+  width: 120px;
+  margin-top: 20px;
+}
+
+/* Success */
+.success {
   text-align: center;
   animation: fadeIn 1s ease forwards;
 }
@@ -131,26 +153,28 @@ button {
 }
 
 .success p {
+  font-family: 'Pacifico', cursive;
   color: #790000;
-  font-size: 16px;
+  font-size: 24px;
+  line-height: 1.4;
 }
 
 .hidden {
   display: none;
 }
 
-/* Floating Hearts */
+/* Floating hearts */
 .heart {
   position: absolute;
   color: #790000;
-  font-size: 20px;
+  font-size: 22px;
   animation: floatUp 4s linear infinite;
 }
 
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
 }
 
 @keyframes fadeIn {
@@ -172,7 +196,11 @@ button {
 /* Responsive */
 @media (max-width: 480px) {
   .envelope {
-    width: 240px;
-    height: 160px;
+    width: 320px;
+    height: 220px;
+  }
+
+  .card {
+    width: 280px;
   }
 }
